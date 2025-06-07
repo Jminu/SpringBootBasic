@@ -13,12 +13,10 @@ import java.io.IOException;
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
     @Override
-    public void handle(HttpServletRequest request,
-                       HttpServletResponse response,
+    public void handle(HttpServletRequest request, HttpServletResponse response,
                        AccessDeniedException accessDeniedException)
-            throws IOException, ServletException {
-
-        // 접근 거부 시 "/access-denied"로 리다이렉트
-        response.sendRedirect("/access-denied");
+            throws ServletException, IOException {
+        request.getRequestDispatcher("/access-denied").forward(request, response);
     }
+
 }
