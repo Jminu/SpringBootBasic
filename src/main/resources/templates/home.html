@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+<h1>Welcome to Product Manager</h1>
+
+<!-- 로그인하지 않은 사용자 -->
+<div sec:authorize="isAnonymous()">
+    <a th:href="@{/login}">로그인</a> |
+    <a th:href="@{/register}">회원가입</a>
+</div>
+
+<!-- 로그인된 사용자 -->
+<div sec:authorize="isAuthenticated()">
+    <p>안녕하세요, <span sec:authentication="name"></span>님!</p>
+    <a th:href="@{/products}">상품 목록 보기</a>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">로그아웃</button>
+    </form>
+</div>
+</body>
+</html>

@@ -63,6 +63,10 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -79,6 +83,8 @@
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
+                            <version>1.18.30</version> <!-- 명시적으로 버전 추가 -->
+                            <scope>provided</scope> <!-- optional 대신 provided -->
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
