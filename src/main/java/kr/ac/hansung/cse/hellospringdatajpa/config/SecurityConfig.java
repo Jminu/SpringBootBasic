@@ -43,6 +43,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/products").hasAnyRole("USER", "ADMIN")
                         .requestMatchers("/products/new", "/products/save",
                                 "/products/edit/**", "/products/delete/**").hasRole("ADMIN")
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
 
