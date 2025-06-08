@@ -14,12 +14,12 @@
 </div>
 
 <!-- 로그인된 사용자 -->
-<div sec:authorize="isAuthenticated()">
-    <p>안녕하세요, <span sec:authentication="name"></span>님!</p>
-    <a th:href="@{/products}">상품 목록 보기</a>
-    <form th:action="@{/logout}" method="post">
-        <button type="submit">로그아웃</button>
-    </form>
-</div>
+<!--<div sec:authorize="isAuthenticated()">-->
+<!--    <p>안녕하세요, <span sec:authentication="name"></span>님!</p>-->
+<!--    <a th:href="@{/products}">상품 목록 보기</a>-->
+<!--    <form th:action="@{/logout}" method="post">-->
+<!--        <button type="submit">로그아웃</button>-->
+<!--    </form>-->
+<!--</div>-->
 </body>
 </html>

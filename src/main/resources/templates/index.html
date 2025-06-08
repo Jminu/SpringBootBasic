@@ -8,6 +8,14 @@
 
 <body>
 <div class="container">
+
+    <!-- ✅ 로그아웃 버튼 -->
+    <div class="d-flex justify-content-end mt-3">
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn btn-outline-secondary">Logout</button>
+        </form>
+    </div>
+
     <h1 class="mt-5">Product List</h1>
     <a class="btn btn-primary mb-3" th:href="@{/products/new}">Create New Product</a>
 
